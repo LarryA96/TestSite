@@ -7,7 +7,7 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=40.73&longitude=-73.93&ho
       <h2>Forecast</h2>
       <p><strong>Latitude:</strong> ${data.latitude}</p>
       <p><strong>Longitude:</strong> ${data.longitude}</p>
-      <p><strong>Time:</strong> ${data.hourly.time[0]}</p>
+      <p><strong>Time:</strong> ${data.hourly.time[6]}</p>
       <p><strong>Temperature:</strong> ${data.hourly.temperature_2m[0]}${data.hourly_units.temperature_2m}</p>
     `;
   })
