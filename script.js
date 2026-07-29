@@ -1,5 +1,5 @@
 // Create a new paragraph element
-const paragraph = document.createElement("p");
+const paragraph = document.createElement("pre");
 
 //Change its text to new york data
 fetch('https://api.open-meteo.com/v1/forecast?latitude=40.73&longitude=-73.93')
