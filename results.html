@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+
+    <style>
+
+        *{
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            margin:0;
+            background:#eef4ff;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:700px;
+            background:white;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,.15);
+        }
+
+        h1{
+            text-align:center;
+            color:#1f4c8c;
+        }
+
+        .weather-card{
+            margin-top:30px;
+            border:1px solid #ddd;
+            border-radius:10px;
+            padding:25px;
+        }
+
+        .weather-card p{
+            font-size:18px;
+            margin:12px 0;
+        }
+
+        .label{
+            font-weight:bold;
+            color:#333;
+        }
+
+        .back{
+            display:inline-block;
+            margin-top:30px;
+            text-decoration:none;
+            background:#1976d2;
+            color:white;
+            padding:12px 20px;
+            border-radius:6px;
+        }
+
+        .back:hover{
+            background:#0d5fb8;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Weather Results</h1>
+
+    <!--
+        Replace the placeholder values below with
+        weather data returned from your backend/API.
+    -->
+
+    <div class="weather-card">
+
+        <p><span class="label">Location:</span> New York, USA</p>
+
+        <p><span class="label">Temperature:</span> 24°C</p>
+
+        <p><span class="label">Feels Like:</span> 26°C</p>
+
+        <p><span class="label">Weather:</span> Partly Cloudy</p>
+
+        <p><span class="label">Humidity:</span> 72%</p>
+
+        <p><span class="label">Wind Speed:</span> 14 km/h</p>
+
+        <p><span class="label">Pressure:</span> 1015 hPa</p>
+
+        <p><span class="label">Visibility:</span> 10 km</p>
+
+    </div>
+
+    <a class="back" href="index.html">
+        Search Again
+    </a>
+
+</div>
+
+</body>
+</html>
