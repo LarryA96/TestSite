@@ -9,20 +9,77 @@
 </head>
 <body>
 
-  <header>
-    <h1>New York Weather</h1>
-  </header>
+<div class="container">
 
-  <main>
-    <div id="weather">
-      Loading weather...
+    <h1>Weather Application</h1>
+
+    <div class="forms">
+
+        <!-- Search by City -->
+        <div class="card">
+
+            <h2>Search by Location</h2>
+
+            <form action="results.html" method="GET">
+
+                <label for="location">City or Location</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="New York"
+                    required
+                >
+
+                <button type="submit">
+                    Search Weather
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Search by Coordinates -->
+        <div class="card">
+
+            <h2>Search by Coordinates</h2>
+
+            <form action="results.html" method="GET">
+
+                <label for="latitude">Latitude</label>
+
+                <input
+                    type="number"
+                    step="any"
+                    id="latitude"
+                    name="latitude"
+                    placeholder="40.7128"
+                    required
+                >
+
+                <label for="longitude">Longitude</label>
+
+                <input
+                    type="number"
+                    step="any"
+                    id="longitude"
+                    name="longitude"
+                    placeholder="-74.0060"
+                    required
+                >
+
+                <button type="submit">
+                    Search Weather
+                </button>
+
+            </form>
+
+        </div>
+
     </div>
-  </main>
 
-  <footer>
-    <p>&copy; 2026</p>
-  </footer>
+</div>
 
-  <script src="script.js"></script>
 </body>
 </html>
