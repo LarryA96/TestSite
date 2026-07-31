@@ -34,19 +34,21 @@ if (dataObject.latitude){
   coordinateAPI(dataObject.latitude, dataObject.longitude);
 }
 
+const weatherDiv = document.getElementById("weather");
+//Redirect page
+window.location.href = "https://larrya96.github.io/TestSite/results.html";
 
 
 const weatherDiv = document.getElementById("weather");
 
 //Handle API call
 function coordinateAPI(latitude, longitude){
-  const weatherDiv = document.getElementById("weather");
+  
   const apiCall = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,precipitation,is_day&temperature_unit=fahrenheit&precipitation_unit=inch`;
 fetch(apiCall)
   .then(response => response.json())
   .then(data => {
-    //Redirect page
-    window.location.href = "https://larrya96.github.io/TestSite/results.html";
+   
     //Update contents with api data
     weatherDiv.innerHTML = `
       <h2>Forecast</h2>
