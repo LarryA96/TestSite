@@ -10,7 +10,7 @@ coordinatesForm.addEventListener("submit", function (event) {
 
     sessionStorage.setItem("searchType", "coordinates");
     sessionStorage.setItem("weatherSearch", JSON.stringify(dataObject));
-
+console.log(JSON.stringify(dataObject));
     window.location.href = "results.html";
 });
 
