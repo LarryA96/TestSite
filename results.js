@@ -25,9 +25,7 @@ function coordinateAPI(latitude, longitude) {
         .then(response => response.json())
         .then(data => {
             location = [data.city, data.principalSubdivision];
-            timeZone = data.localityInfo.informative.find(
-  item => item.description === "time zone"
-)?.name;
+            timeZone = data.localityInfo.informative[3].name;
             languageCode = `en-${data.countryCode}`;
             console.log(location);
             console.log(timezone);
