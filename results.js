@@ -7,6 +7,7 @@ if (!storedData) {
     weatherDiv.textContent = "No search data found.";
 } else if (searchType === "coordinates") {
     coordinateAPI(storedData.latitude, storedData.longitude);
+    console.log(`Coordinates are ${storedData.latitude}, ${storedData.longitude}`);
 } else if (searchType === "location") {
     locationAPI(storedData.location);
 }
