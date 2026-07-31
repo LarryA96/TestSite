@@ -15,6 +15,7 @@ if (!storedData) {
 function coordinateAPI(latitude, longitude) {
     let location;
     let timeZone;
+    let languageCode;
     const apiCall =
         `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,precipitation,is_day&temperature_unit=fahrenheit&precipitation_unit=inch`;
     const cityCall = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
@@ -24,7 +25,10 @@ function coordinateAPI(latitude, longitude) {
         .then(response => response.json())
         .then(data => {
             location = [data.city, data.principalSubdivision];
-            timeZone = [data.localityInfo.informative[2].name]
+            timeZone = data.localityInfo.informative.find(
+  item => item.description === "time zone"
+)?.name;
+            languageCode = `en-${data.countryCode}`;
         })
         .catch(error => {
             console.log(error.message);
@@ -38,7 +42,7 @@ function coordinateAPI(latitude, longitude) {
                 <h2>Forecast for: ${location[0]}, ${location[1]}</h2>
                 <p><strong>Latitude:</strong> ${data.latitude.toFixed(2)}</p>
                 <p><strong>Longitude:</strong> ${data.longitude.toFixed(2)}</p>
-                <p><strong>Date:</strong> ${new Date(data.current.time).toDateString()}, ${new Date(data.current.time).toLocaleTimeString([], {timeZone: timeZone, hour: "2-digit", minute: "2-digit"})}</p>
+                <p><strong>Date:</strong> ${new Date(data.current.time).toDateString()}, ${new Date(data.current.time).toLocaleTimeString(languageCode, {timeZone: timeZone, hour: "2-digit", minute: "2-digit"})}</p>
                 <p><strong>Temperature:</strong> ${data.current.temperature_2m} °F</p>
                 <p><strong>Precipitation:</strong> ${data.current.precipitation} in</p>
             `;
