@@ -14,6 +14,7 @@ if (!storedData) {
 function coordinateAPI(latitude, longitude) {
     const apiCall =
         `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,precipitation,is_day&temperature_unit=fahrenheit&precipitation_unit=inch`;
+    console.log(`api call is "${apiCall}"`);
 
     fetch(apiCall)
         .then(response => response.json())
