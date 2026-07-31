@@ -15,7 +15,7 @@ if (!storedData) {
 function coordinateAPI(latitude, longitude) {
     //Declare API formats
     const apiCall =
-        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,precipitation,is_day&temperature_unit=fahrenheit&precipitation_unit=inch`;
+        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,precipitation,is_day&timezone=UTC&temperature_unit=fahrenheit&precipitation_unit=inch`;
     const cityCall = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
 
     //Call APIs
