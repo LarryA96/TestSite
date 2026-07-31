@@ -22,7 +22,7 @@ function coordinateAPI(latitude, longitude) {
                 <h2>Forecast</h2>
                 <p><strong>Latitude:</strong> ${data.latitude}</p>
                 <p><strong>Longitude:</strong> ${data.longitude}</p>
-                <p><strong>Time:</strong> ${data.current.time}</p>
+                <p><strong>Time:</strong> ${new Date(data.current.time).toDateString()}</p>
                 <p><strong>Temperature:</strong> ${data.current.temperature_2m} °F</p>
                 <p><strong>Precipitation:</strong> ${data.current.precipitation} in</p>
             `;
