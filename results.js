@@ -24,7 +24,7 @@ function coordinateAPI(latitude, longitude) {
                 <h2>Forecast</h2>
                 <p><strong>Latitude:</strong> ${data.latitude.toFixed(2)}</p>
                 <p><strong>Longitude:</strong> ${data.longitude.toFixed(2)}</p>
-                <p><strong>Time:</strong> ${new Date(data.current.time).toDateString()}</p>
+                <p><strong>Date:</strong> ${new Date(data.current.time).toDateString()}, ${new Date(data.current.time).toTimeString()}</p>
                 <p><strong>Temperature:</strong> ${data.current.temperature_2m} °F</p>
                 <p><strong>Precipitation:</strong> ${data.current.precipitation} in</p>
             `;
