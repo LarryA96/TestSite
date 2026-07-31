@@ -1,3 +1,5 @@
+let dataObject;
+
 //Create event listeners for form
 //Select the form element
 const coordinatesForm = document.querySelector('#coordinatesForm');
@@ -9,10 +11,12 @@ coordinatesForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   //extract all data from the form
-  const formData = new FormData(form);
+  const formData = new FormData(event.target);
 
   //Extract data into a standard JavaScript object
-  const dataObject = Object.fromEntries(formData.entries());
+  dataObject = Object.fromEntries(formData.entries());
+  
+  coordinateAPI(dataObject.latitude, dataObject.longitude);
 });
 
 locationForm.addEventListener('submit', function (event) {
@@ -20,19 +24,14 @@ locationForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   //extract all data from the form
-  const formData = new FormData(form);
+  const formData = new FormData(event.target);
 
   //Extract data into a standard JavaScript object
-  const dataObject = Object.fromEntries(formData.entries());
+  dataObject = Object.fromEntries(formData.entries());
+  
+  locationAPI(dataObject.location);
 });
 
-//Check if location or coordinates was provided
-if (dataObject.location){
-  locationAPI(dataObject.location);
-}
-if (dataObject.latitude){
-  coordinateAPI(dataObject.latitude, dataObject.longitude);
-}
 
 const weatherDiv = document.getElementById("weather");
 //Redirect page
