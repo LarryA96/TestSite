@@ -21,7 +21,7 @@ function coordinateAPI(latitude, longitude) {
         .then(response => response.json())
         .then(data => {
             weatherDiv.innerHTML = `
-                <h2>Forecast</h2>
+                <h2>Forecast for: </h2>
                 <p><strong>Latitude:</strong> ${data.latitude.toFixed(2)}</p>
                 <p><strong>Longitude:</strong> ${data.longitude.toFixed(2)}</p>
                 <p><strong>Date:</strong> ${new Date(data.current.time).toDateString()}, ${new Date(data.current.time).toLocaleTimeString([], {
