@@ -28,6 +28,6 @@ function coordinateAPI(latitude, longitude) {
             `;
         })
         .catch(error => {
-            weatherDiv.textContent = `Error: ${error.message}`;
+            weatherDiv.innerHTML = `<h1>Error: ${error.message}</h1>`;
         });
 }
