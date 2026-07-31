@@ -41,7 +41,12 @@ function coordinateAPI(latitude, longitude) {
                         <h2>Forecast for: ${city}, ${state}</h2>
                         <p><strong>Latitude:</strong> ${weatherData.latitude.toFixed(2)}</p>
                         <p><strong>Longitude:</strong> ${weatherData.longitude.toFixed(2)}</p>
-                        <p><strong>Date:</strong> ${currentTime.toLocaleDateString(languageCode)}, 
+                        <p><strong>Local Time:</strong> ${new Date().toLocaleTimeString(languageCode, {
+            timeZone: timeZone,
+            hour: "2-digit",
+            minute: "2-digit"
+        })}</p>
+                        <p><strong>Last Updated:</strong> ${currentTime.toLocaleDateString(languageCode)}, 
                         ${currentTime.toLocaleTimeString(languageCode, {
                             hour: "2-digit",
                             minute: "2-digit"
