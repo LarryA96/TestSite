@@ -29,6 +29,9 @@ function coordinateAPI(latitude, longitude) {
   item => item.description === "time zone"
 )?.name;
             languageCode = `en-${data.countryCode}`;
+            console.log(location);
+            console.log(timezone);
+            console.log(languageCode);
         })
         .catch(error => {
             console.log(error.message);
