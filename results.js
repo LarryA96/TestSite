@@ -68,7 +68,7 @@ function locationAPI(location){
     .then(response => response.json())
     .then(coordinateData => {
         console.log(JSON.stringify(coordinateData));
-        coordinateAPI(coordinateData[0].latitude, coordinateData[0].longitude);
+        coordinateAPI(coordinateData.results[0].latitude, coordinateData.results[0].longitude);
     })
     .catch(error => {
         weatherDiv.innerHTML = `<h1>Error: ${error.message}</h1>`;
