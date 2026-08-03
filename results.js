@@ -71,4 +71,4 @@ function locationAPI(location){
     .catch(error => {
         weatherDiv.innerHTML = `<h1>Error: ${error.message}</h1>`;
     });
-} */
+}
