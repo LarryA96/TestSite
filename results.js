@@ -2,6 +2,7 @@ const weatherDiv = document.getElementById("weather");
 
 const searchType = sessionStorage.getItem("searchType");
 const storedData = JSON.parse(sessionStorage.getItem("weatherSearch"));
+console.log(JSON.stringify(storedData));
 
 if (!storedData) {
     weatherDiv.textContent = "No search data found.";
