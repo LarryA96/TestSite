@@ -62,7 +62,7 @@ function coordinateAPI(latitude, longitude) {
 }
 
 function locationAPI(location){
-    const callCityCoordinates = "https://geocoding-api.open-meteo.com/v1/search?name=${location}&count=10&language=en&format=json";
+    const callCityCoordinates = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(location)}&count=10&language=en&format=json`;
     fetch(callCityCoordinates)
     .then(response => response.json())
     .then(coordinateData => {
