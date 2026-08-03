@@ -60,15 +60,15 @@ function coordinateAPI(latitude, longitude) {
             weatherDiv.innerHTML = `<h1>Error: ${error.message}</h1>`;
         });
 }
-/*
+
 function locationAPI(location){
     const callCityCoordinates = "https://geocoding-api.open-meteo.com/v1/search?name=${location}&count=10&language=en&format=json";
-    const latitude;
-    const longitude;
-    
     fetch(callCityCoordinates)
     .then(response => response.json())
     .then(coordinateData => {
-        
+        coordinateAPI(coordinateData[0].latitude, coordinateData[0].longitude);
     })
+    .catch(error => {
+        weatherDiv.innerHTML = `<h1>Error: ${error.message}</h1>`;
+    });
 } */
