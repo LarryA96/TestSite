@@ -60,7 +60,7 @@ function coordinateAPI(latitude, longitude) {
             weatherDiv.innerHTML = `<h1>Error: ${error.message}</h1>`;
         });
 }
-
+/*
 function locationAPI(location){
     const callCityCoordinates = "https://geocoding-api.open-meteo.com/v1/search?name=${location}&count=10&language=en&format=json";
     const latitude;
@@ -71,4 +71,4 @@ function locationAPI(location){
     .then(coordinateData => {
         
     })
-}
+} */
